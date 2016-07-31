@@ -3,7 +3,11 @@ The story headline is "An Interactive Adventure".
 The story genre is "Fantasy".
 The story creation year is 2016.
 
-Part 0.0 - Kinds
+Include Basic Screen Effects by Emily Short.
+
+Use full-length room descriptions.
+
+Part 0 - Kinds
 
 A backpack is a kind of player's holdall.
 It is always wearable.
@@ -29,7 +33,7 @@ Understand the title property as describing a book.
 
 A spellbook is a kind of book.
 
-Part 0.1 - Actions
+Chapter 1 - Actions
 
 Reading is an action applying to one thing.
 The specification of the reading action is "Reading is basically like opening except that it involves opening openable objects first."
@@ -50,17 +54,18 @@ Carry out reading:
 
 [TODO: provide an exit-listing command (that doesn't list undiscovered hidden exits)]
 
-Part 0.1 - Activities
+Chapter 2 - Activities
 
-[This activity is used to unset the "disguised" property. It provides a convenient hook to change an object's other properties (like its name) when the disguise is removed.]
-Revealing something is an activity.
-After revealing something (called the object) when the object is disguised:
-	now the object is not disguised.
+To say more:
+	say "[paragraph break][bracket]More[close bracket]";
+	wait for any key;
+	say "[paragraph break]".
 
 Part 1 - Introduction
 
 Late for Class is a scene.
 Late for Class begins when play begins.
+Late for Class ends when your spellbook is not disguised.
 
 Your backpack is a backpack.
 "Your backpack is old and faded but still sturdy."
@@ -88,10 +93,12 @@ during Late for Class:
 
 [TODO: allow "in" to get to the hallway.]
 The Jameson Building Hallway is east of the Crowded Courtyard.
+It is inside from the Crowded Courtyard.
 "Doors line the walls of the short hallway. Your classroom is to the south: Room 193."
 
 After going to the Jameson Building Hallway for the first time:
-	say "You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.".
+	say "You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.";
+	continue the action. [Without this, the room description wouldn't be printed.]
 Instead of going somewhere (called the destination) from the Jameson Building Hallway
 when the destination is not Room 193
 during Late for Class:
@@ -99,6 +106,7 @@ during Late for Class:
 
 
 Room 193 is south from the Jameson Building Hallway.
+It is inside from the Jameson Building Hallway.
 "Tiers of desks slope down to the front of the room, which is occupied by a large blackboard and a small table."
 
 [TODO: room description and lecture fragments]
@@ -106,13 +114,12 @@ Your desk is a supporter in Room 193.
 It is scenery.
 
 Your spellbook is a privately-named spellbook.
-"[if disguised]Some student must have left it on the desk. [end if]The dark leather cover is old but supple, and the title is printed in gilded letters."
+Instead of examining the spellbook:
+	say "[if disguised]Some student must have left it on the desk. [end if]The dark leather cover is old but supple, and the title is printed in gilded letters."
 It has title "Grumman's Guide to Spelling".
 Understand "book" as your spellbook.
 Understand "spellbook" as your spellbook when your spellbook is not disguised.
 Your spellbook can be disguised.
-After revealing your spellbook:
-	now the title of your spellbook is "Grumman's Guide to Spells".
 It is disguised.
 It is on your desk.
 
@@ -124,9 +131,22 @@ Instead of reading your spellbook for the second time:
 	
 Instead of reading your spellbook for the third time:
 	say "You're quickly growing bored with the spelling book, but you give it a cursory scan.";
-	say "Just before you completely lose interest, you notice an unusual pair of words: 'sypra lum.' You murmur the peculiar words under your breath.";
+	say "Just before you completely lose interest, you notice an unusual pair of words: '[italic type]sypra lum[roman type].' You murmur the peculiar words under your breath.";
+	say "[bold type]Suddenly, the room plunges into darkness.[roman type][line break]";
 	now Room 193 is not lighted;
-	say "[bold type]Suddenly, the room plunges into darkness.[roman type]".
+	now your spellbook is not disguised;
+	now the title of your spellbook is "Grumman's Guide to Spells";
+	say "[more]";
+	say "Confused shouts echo through the room, and you hear students groping toward the closed door. [run paragraph on]";
+	[TODO: make sure the player can't leave any other important items.]
+	if the player does not have your spellbook:
+		say "You grab the book and jump to your feet.";
+		silently try taking your spellbook;
+	otherwise:
+		say "You jump to your feet.";
+	say "Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.";
+	try silently exiting; [to get off the chair]
+	try exiting. [to leave the room]
 
 Your chair is in Room 193.
 Your chair can be enterable.
@@ -134,11 +154,12 @@ It is enterable.
 
 After going to Room 193 during Late for Class:
 	try silently entering your chair;
-	say "You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.".
+	say "You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.";
+	continue the action.
 
 Understand "stand" as exiting when the player is in your chair.
 
-Instead of exiting from your chair during Late for Class:
+Instead of exiting from your chair when your spellbook is disguised:
 	say "You've already made enough of a scene by coming in late. You'd better not draw any more attention.".
 
 
