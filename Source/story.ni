@@ -7,11 +7,17 @@ Include Basic Screen Effects by Emily Short.
 
 Use full-length room descriptions.
 
-Part 0 - Kinds
+Part 0 - Definitions
+
+Chapter 1 - Kinds
+
+Section 1 - Backpack
 
 A backpack is a kind of player's holdall.
 It is always wearable.
 It is usually closed.
+
+Section 2 - Book
 
 [TODO: have multiple levels of familiarity?]
 A book is a kind of thing.
@@ -31,9 +37,13 @@ Rule for printing the name of a book (called the book) when the book is familiar
 	say "[italic type][the title of the book][roman type]".
 Understand the title property as describing a book.
 
+Section 3 - Spellbook
+
 A spellbook is a kind of book.
 
 Chapter 1 - Actions
+
+Section 1 - Reading
 
 Reading is an action applying to one thing.
 The specification of the reading action is "Reading is basically like opening except that it involves opening openable objects first."
@@ -52,66 +62,28 @@ Before reading an openable thing:
 Carry out reading:
 	try examining the noun instead.
 
-[TODO: provide an exit-listing command (that doesn't list undiscovered hidden exits)]
+[TODO: provide an exit-listing command (that doesn't list undiscovered hidden exits)
+and/or an exit indicator in the status bar]
 
 Chapter 2 - Activities
 
+Section 1 - Saying more
+
+[Allows the creation of a "[more]" prompt]
 To say more:
 	say "[paragraph break][bracket]More[close bracket]";
 	wait for any key;
 	say "[paragraph break]".
 
-Part 1 - Introduction
+Part 1 - Equipment
 
-Late for Class is a scene.
-Late for Class begins when play begins.
-Late for Class ends when your spellbook is not disguised.
+Section 1 - Your backpack
 
 Your backpack is a backpack.
 "Your backpack is old and faded but still sturdy."
 It is worn by the player.
 
-
-[TODO: describe the door, pavement, etc.]
-The Crowded Courtyard is a room.
-"You stand in a paved courtyard outside the Jameson Lecture Hall, which stands to the east. Students throng the courtyard."
-
-The Jameson Lecture Hall is scenery in the Crowded Courtyard.
-"The imposing lecture hall (constructed in 1893, according to the date engraved on its wall) casts a somber shadow over the courtyard."
-
-Some people called the students are in the Crowded Courtyard.
-"The courtyard is full of students of all descriptions. Most are strolling and chatting idly, but you notice a few jostling their way frantically through the crowd, clutching their book bags. They're probably just as late as you are."
-
-Instead of opening your backpack during Late for Class:
-	say "This is no time to be hunting through your backpack. You're late for class!".
-
-Instead of going somewhere (called the destination) from the Crowded Courtyard
-when the destination is not the Jameson Building Hallway
-during Late for Class:
-	say "You're already late for class. You'd better head straight to the lecture hall."
-
-
-[TODO: allow "in" to get to the hallway.]
-The Jameson Building Hallway is east of the Crowded Courtyard.
-It is inside from the Crowded Courtyard.
-"Doors line the walls of the short hallway. Your classroom is to the south: Room 193."
-
-After going to the Jameson Building Hallway for the first time:
-	say "You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.";
-	continue the action. [Without this, the room description wouldn't be printed.]
-Instead of going somewhere (called the destination) from the Jameson Building Hallway
-when the destination is not Room 193
-during Late for Class:
-	say "Hold on! Your classroom isn't that way!".
-
-
-Room 193 is south from the Jameson Building Hallway.
-It is inside from the Jameson Building Hallway.
-"Tiers of desks slope down to the front of the room, which is occupied by a large blackboard and a small table."
-
-[TODO: room description and lecture fragments]
-Your desk is a supporter in Room 193.
-It is scenery.
+Section 2 - Your spellbook
 
 Your spellbook is a privately-named spellbook.
 Instead of examining the spellbook:
@@ -123,12 +95,90 @@ Your spellbook can be disguised.
 It is disguised.
 It is on your desk.
 
+Part 2 - Scenery
+
+Chapter 1 - Campus
+
+Section 1 - The Crowded Courtyard
+
+[TODO: describe the door, pavement, etc.]
+The Crowded Courtyard is a room.
+"You stand in a paved courtyard outside the Jameson Lecture Hall, which stands to the east. Students throng the courtyard."
+
+The Jameson Lecture Hall is scenery in the Crowded Courtyard.
+"The imposing lecture hall (constructed in 1893, according to the date engraved on its wall) casts a somber shadow over the courtyard."
+
+Some people called the students are in the Crowded Courtyard.
+"The courtyard is full of students of all descriptions. Most are strolling and chatting idly, but you notice a few jostling their way frantically through the crowd, clutching their book bags. They're probably just as late as you are."
+
+Section 2 - The Jameson Building Hallway
+
+The Jameson Building Hallway is east of the Crowded Courtyard.
+It is inside from the Crowded Courtyard.
+"Doors line the walls of the short hallway. Your classroom is to the south: Room 193."
+
+Section 3 - Room 193
+
+Room 193 is south from the Jameson Building Hallway.
+It is inside from the Jameson Building Hallway.
+"Tiers of desks slope down to the front of the room, which is occupied by a large blackboard and a small table."
+
+[TODO: room description and lecture fragments]
+Your desk is a supporter in Room 193.
+It is scenery.
+
+Your spellbook is on your desk.
+
+Your chair is in Room 193.
+Your chair can be enterable.
+It is enterable.
+
+Understand "stand" as exiting when the player is in your chair.
+
+Part 3 - Story
+
+Chapter 1 - Introduction
+
+Late for Class is a scene.
+Late for Class begins when play begins.
+Late for Class ends when your spellbook is not disguised.
+
+Section 1 - The Crowded Courtyard
+
+Instead of opening your backpack during Late for Class:
+	say "This is no time to be hunting through your backpack. You're late for class!".
+
+Instead of going somewhere (called the destination) from the Crowded Courtyard
+when the destination is not the Jameson Building Hallway
+during Late for Class:
+	say "You're already late for class. You'd better head straight to the lecture hall."
+
+Section 2 - The Jameson Building Hallway
+
+After going to the Jameson Building Hallway for the first time:
+	say "You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.";
+	continue the action. [Without this, the room description wouldn't be printed.]
+Instead of going somewhere (called the destination) from the Jameson Building Hallway
+when the destination is not Room 193
+during Late for Class:
+	say "Hold on! Your classroom isn't that way!".
+
+Section 3 - Room 193
+
+After going to Room 193 during Late for Class:
+	try silently entering your chair;
+	say "You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.";
+	continue the action.
+
+Instead of exiting from your chair when your spellbook is disguised:
+	say "You've already made enough of a scene by coming in late. You'd better not draw any more attention.".
+
 Instead of reading your spellbook for the first time:
 	say "The book seems to be just a huge list of words. The pages are old and slightly yellowed, but the text is still quite legible.".
 
 Instead of reading your spellbook for the second time:
 	say "As you page listlessly through the list of words, you notice that some of the spellings are rather archaic. Who would have brought such an old book into the lecture hall? Someone must have just wanted to get rid of it."
-	
+
 Instead of reading your spellbook for the third time:
 	say "You're quickly growing bored with the spelling book, but you give it a cursory scan.";
 	say "Just before you completely lose interest, you notice an unusual pair of words: '[italic type]sypra lum[roman type].' You murmur the peculiar words under your breath.";
@@ -147,20 +197,3 @@ Instead of reading your spellbook for the third time:
 	say "Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.";
 	try silently exiting; [to get off the chair]
 	try exiting. [to leave the room]
-
-Your chair is in Room 193.
-Your chair can be enterable.
-It is enterable.
-
-After going to Room 193 during Late for Class:
-	try silently entering your chair;
-	say "You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.";
-	continue the action.
-
-Understand "stand" as exiting when the player is in your chair.
-
-Instead of exiting from your chair when your spellbook is disguised:
-	say "You've already made enough of a scene by coming in late. You'd better not draw any more attention.".
-
-
-	
