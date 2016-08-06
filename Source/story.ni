@@ -137,7 +137,7 @@ Understand "stand" as exiting when the player is in your chair.
 
 Part 3 - Story
 
-Chapter 1 - Introduction
+Chapter 1 - Late for Class
 
 Late for Class is a scene.
 Late for Class begins when play begins.
@@ -148,20 +148,18 @@ Section 1 - The Crowded Courtyard
 Instead of opening your backpack during Late for Class:
 	say "This is no time to be hunting through your backpack. You're late for class!".
 
-Instead of going somewhere (called the destination) from the Crowded Courtyard
-when the destination is not the Jameson Building Hallway
-during Late for Class:
-	say "You're already late for class. You'd better head straight to the lecture hall."
+Before going a direction (called thataway) in the Crowded Courtyard during Late for Class:
+	If the room thataway from the location is not the Jameson Building Hallway:
+		say "You're already late for class. You'd better head straight to the lecture hall." instead.
 
 Section 2 - The Jameson Building Hallway
 
 After going to the Jameson Building Hallway for the first time:
 	say "You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.";
 	continue the action. [Without this, the room description wouldn't be printed.]
-Instead of going somewhere (called the destination) from the Jameson Building Hallway
-when the destination is not Room 193
-during Late for Class:
-	say "Hold on! Your classroom isn't that way!".
+Before going to somewhere (called the destination) from the Jameson Building Hallway during Late for Class:
+	If the destination is not Room 193:
+		say "Hold on! Your classroom isn't that way!" instead.
 
 Section 3 - Room 193
 
@@ -197,3 +195,5 @@ Instead of reading your spellbook for the third time:
 	say "Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.";
 	try silently exiting; [to get off the chair]
 	try exiting. [to leave the room]
+
+Chapter 2 - Investigating the Book
