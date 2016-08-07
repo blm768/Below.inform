@@ -145,8 +145,9 @@ Late for Class ends when your spellbook is not disguised.
 
 Section 1 - The Crowded Courtyard
 
-Instead of opening your backpack during Late for Class:
-	say "This is no time to be hunting through your backpack. You're late for class!".
+Before opening your backpack during Late for Class:
+	If the player is not on your chair:
+		say "This is no time to be hunting through your backpack. You're late for class!" instead.
 
 Before going a direction (called thataway) in the Crowded Courtyard during Late for Class:
 	If the room thataway from the location is not the Jameson Building Hallway:
@@ -168,11 +169,13 @@ After going to Room 193 during Late for Class:
 	say "You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.";
 	continue the action.
 
+Does the player mean entering your chair when the location is Room 193: it is likely.
+
 Instead of exiting from your chair when your spellbook is disguised:
 	say "You've already made enough of a scene by coming in late. You'd better not draw any more attention.".
 
 Instead of reading your spellbook for the first time:
-	say "The book seems to be just a huge list of words. The pages are old and slightly yellowed, but the text is still quite legible.".
+	say "The book seems to contain a huge list of words, most of them rather obscure. The pages are old and slightly yellowed, but the text is still quite legible.".
 
 Instead of reading your spellbook for the second time:
 	say "As you page listlessly through the list of words, you notice that some of the spellings are rather archaic. Who would have brought such an old book into the lecture hall? Someone must have just wanted to get rid of it."
