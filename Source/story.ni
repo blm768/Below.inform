@@ -41,6 +41,14 @@ Section 3 - Spellbook
 
 A spellbook is a kind of book.
 
+[TODO:
+Better chair dynamics?
+*	Sitting/standing as distinct actions (so you can't "stand" to get out of a booth, for instance)
+	*	Also supports standing on chairs.
+*	Dropped items should end up on the chair's supporter, not on
+	the chair. (See the "perch" example in the Inform docs.)
+]
+
 Chapter 1 - Actions
 
 Section 1 - Reading
@@ -115,7 +123,7 @@ Section 2 - The Jameson Building Hallway
 
 The Jameson Building Hallway is east of the Crowded Courtyard.
 It is inside from the Crowded Courtyard.
-"Doors line the walls of the short hallway. Your classroom is to the south: Room 193."
+"Doors line the walls of the short east-west hallway. Your classroom is to the south[if Late for Class is happening]: Room 193[end if]."
 
 Section 3 - Room 193
 
@@ -129,11 +137,8 @@ It is scenery.
 
 Your spellbook is on your desk.
 
-Your chair is in Room 193.
-Your chair can be enterable.
-It is enterable.
-
-Understand "stand" as exiting when the player is in your chair.
+Your chair is a supporter in Room 193.
+It is enterable and fixed in place.
 
 Part 3 - Story
 
@@ -143,11 +148,12 @@ Late for Class is a scene.
 Late for Class begins when play begins.
 Late for Class ends when your spellbook is not disguised.
 
-Section 1 - The Crowded Courtyard
-
 Before opening your backpack during Late for Class:
-	If the player is not on your chair:
+	[Don't open the backpack until the player has made it to class.]
+	if the player had not been enclosed by Room 193:
 		say "This is no time to be hunting through your backpack. You're late for class!" instead.
+
+Section 1 - The Crowded Courtyard
 
 Before going a direction (called thataway) in the Crowded Courtyard during Late for Class:
 	If the room thataway from the location is not the Jameson Building Hallway:
@@ -158,6 +164,7 @@ Section 2 - The Jameson Building Hallway
 After going to the Jameson Building Hallway for the first time:
 	say "You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.";
 	continue the action. [Without this, the room description wouldn't be printed.]
+
 Before going to somewhere (called the destination) from the Jameson Building Hallway during Late for Class:
 	If the destination is not Room 193:
 		say "Hold on! Your classroom isn't that way!" instead.
@@ -170,6 +177,7 @@ After going to Room 193 during Late for Class:
 	continue the action.
 
 Does the player mean entering your chair when the location is Room 193: it is likely.
+[There's not really anything else on which to sit.]
 
 Instead of exiting from your chair when your spellbook is disguised:
 	say "You've already made enough of a scene by coming in late. You'd better not draw any more attention.".
@@ -188,15 +196,24 @@ Instead of reading your spellbook for the third time:
 	now your spellbook is not disguised;
 	now the title of your spellbook is "Grumman's Guide to Spells";
 	say "[more]";
-	say "Confused shouts echo through the room, and you hear students groping toward the closed door. [run paragraph on]";
-	[TODO: make sure the player can't leave any other important items.]
-	if the player does not have your spellbook:
-		say "You grab the book and jump to your feet.";
-		silently try taking your spellbook;
-	otherwise:
-		say "You jump to your feet.";
+	say "Confused shouts echo through the room, and the chairs bump and scrape as students grope toward the closed door. [run paragraph on]";
+	[Grab anything that isn't nailed down. (Typical adventurer behavior.)]
+	[TODO: factor this out as common code? (Create an action called looting or something?)]
+	let the taken items be a list of things;
+	repeat with item running through portable things enclosed by Room 193:
+		[The player is self-enclosed, so we need to make a special exclusion.]
+		if the item is not the player and the player does not enclose the item:
+			silently try taking the item;
+			add the item to the taken items;
+	say "You [if the taken items is not empty]grab [the taken items] and[end if]jump to your feet.[paragraph break]";
 	say "Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.";
 	try silently exiting; [to get off the chair]
 	try exiting. [to leave the room]
 
 Chapter 2 - Investigating the Book
+
+Investigating the Book is a scene.
+Investigating the Book begins when Late for Class ends.
+
+Instead of going to the Crowded Courtyard from the Jameson Building Hallway during Investigating the Book:
+	say "It's pretty crowded out there.".
