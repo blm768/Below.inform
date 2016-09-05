@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-1"/>
+  <activeNode nodeId="node-7"/>
   <item nodeId="node-1">
     <command xml:space="preserve">- start -</command>
-    <result xml:space="preserve">Below&#x000A;An Interactive Fiction by "Benjamin L. Merritt" The story headline is "An Interactive Adventure"&#x000A;Release 1 / Serial number 160806 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Crowded Courtyard&#x000A;You stand in a paved courtyard outside the Jameson Lecture Hall, which stands to the east. Students throng the courtyard.&#x000A;&#x000A;The courtyard is full of students of all descriptions. Most are strolling and chatting idly, but you notice a few jostling their way frantically through the crowd, clutching their book bags. They're probably just as late as you are.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
+    <result xml:space="preserve">Below&#x000A;An Interactive Fiction by "Benjamin L. Merritt" The story headline is "An Interactive Adventure"&#x000A;Release 1 / Serial number 160905 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Crowded Courtyard&#x000A;You stand in a paved courtyard outside the Jameson Lecture Hall, which stands to the east. Students of all descriptions throng the courtyard. Most are strolling and chatting idly, but you notice a few jostling their way frantically through the crowd, clutching their book bags. They're probably just as late as you are.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve">Below&#x000A;An Interactive Fiction by "Benjamin L. Merritt" The story headline is "An Interactive Adventure"&#x000A;Release 1 / Serial number 160905 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Crowded Courtyard&#x000A;You stand in a paved courtyard outside the Jameson Lecture Hall, which stands to the east. Students of all descriptions throng the courtyard. Most are strolling and chatting idly, but you notice a few jostling their way frantically through the crowd, clutching their book bags. They're probably just as late as you are.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
@@ -15,10 +15,10 @@
   </item>
   <item nodeId="node-2">
     <command xml:space="preserve">e</command>
-    <result xml:space="preserve">You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.&#x000A;&#x000A;Jameson Building Hallway&#x000A;Doors line the walls of the short hallway. Your classroom is to the south: Room 193.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
+    <result xml:space="preserve">You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.&#x000A;&#x000A;Jameson Building Hallway&#x000A;Doors line the walls of the short east-west hallway. Your classroom is to the south: Room 193.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve">You burst through the front door into a tiled hallway and immediately scan the doors, looking for your classroom.&#x000A;&#x000A;Jameson Building Hallway&#x000A;Doors line the walls of the short east-west hallway. Your classroom is to the south: Room 193.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
+    <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
       <child nodeId="node-3"/>
@@ -26,10 +26,10 @@
   </item>
   <item nodeId="node-3">
     <command xml:space="preserve">s</command>
-    <result xml:space="preserve">You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.&#x000A;&#x000A;Room 193 (in your chair)&#x000A;Tiers of desks slope down to the front of the room, which is occupied by a large blackboard and a small table.&#x000A;&#x000A;On your desk is a book titled Grumman's Guide to Spelling.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
+    <result xml:space="preserve">You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.&#x000A;&#x000A;Room 193 (on your chair)&#x000A;Tiers of desks slope down to the front of the room, which is occupied by a large blackboard and a small table.&#x000A;&#x000A;On your desk is a book titled Grumman's Guide to Spelling.&#x000A;&#x000A;You can also see your classmates here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve">You slip into the classroom and slide sheepishly into the closest available seat. The professor shoots you a disapproving glance before returning to her lecture.&#x000A;&#x000A;Room 193 (on your chair)&#x000A;Tiers of desks slope down to the front of the room, which is occupied by a large blackboard and a small table.&#x000A;&#x000A;On your desk is a book titled Grumman's Guide to Spelling.&#x000A;&#x000A;You can also see your classmates here.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
+    <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
       <child nodeId="node-4"/>
@@ -37,10 +37,10 @@
   </item>
   <item nodeId="node-4">
     <command xml:space="preserve">read book</command>
-    <result xml:space="preserve">You open Grumman's Guide to Spelling.&#x000A;&#x000A;The book seems to be just a huge list of words. The pages are old and slightly yellowed, but the text is still quite legible.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
+    <result xml:space="preserve">You open Grumman's Guide to Spelling.&#x000A;&#x000A;You scan the first few pages. The book seems to contain a huge list of words, most of them rather obscure. The pages are old and slightly yellowed, but the text is still quite legible.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve">You open Grumman's Guide to Spelling.&#x000A;&#x000A;You scan the first few pages. The book seems to contain a huge list of words, most of them rather obscure. The pages are old and slightly yellowed, but the text is still quite legible.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
+    <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
       <child nodeId="node-5"/>
@@ -48,8 +48,8 @@
   </item>
   <item nodeId="node-5">
     <command xml:space="preserve">read book</command>
-    <result xml:space="preserve">As you page listlessly through the list of words, you notice that some of the spellings are rather archaic. Who would have brought such an old book into the lecture hall? Someone must have just wanted to get rid of it.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
+    <result xml:space="preserve">As you flip listlessly through a few more pages, you notice that some of the spellings are rather archaic. Who would have brought such an old book into the lecture hall?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve">As you flip listlessly through a few more pages, you notice that some of the spellings are rather archaic. Who would have brought such an old book into the lecture hall?&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
@@ -59,8 +59,8 @@
   </item>
   <item nodeId="node-6">
     <command xml:space="preserve">read book</command>
-    <result xml:space="preserve">You're quickly growing bored with the spelling book, but you give it a cursory scan.&#x000A;Just before you completely lose interest, you notice an unusual pair of words: "sypra lum." You murmur the peculiar words under your breath.&#x000A;Suddenly, the room plunges into darkness.&#x000A;[More]</result>
-    <commentary xml:space="preserve"></commentary>
+    <result xml:space="preserve">You're growing bored with the spelling book, but you give it a cursory scan.&#x000A;Just before you completely lose interest, you notice an unusual pair of words: "sypra lum." You murmur the peculiar words under your breath.&#x000A;A chill runs through you, and the room plunges into darkness.&#x000A;&#x000A;[More]</result>
+    <commentary xml:space="preserve">You're growing bored with the spelling book, but you give it a cursory scan.&#x000A;Just before you completely lose interest, you notice an unusual pair of words: "sypra lum." You murmur the peculiar words under your breath.&#x000A;A chill runs through you, and the room plunges into darkness.&#x000A;&#x000A;[More]</commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
@@ -69,9 +69,20 @@
     </children>
   </item>
   <item nodeId="node-7">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Confused shouts echo through the room, and you hear students groping toward the closed door. You grab the book and jump to your feet.&#x000A;Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.&#x000A;&#x000A;You get out of your chair.&#x000A;&#x000A;Darkness&#x000A;It is pitch dark, and you can't see a thing.&#x000A;&#x000A;Jameson Building Hallway&#x000A;Doors line the walls of the short hallway. Your classroom is to the south: Room 193.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
+    <command xml:space="preserve"> </command>
+    <result xml:space="preserve">Confused shouts echo through the room, and the chairs bump and scrape as students grope toward the closed door. You grab Grumman's Guide to Spelling and jump to your feet.&#x000A;&#x000A;Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.&#x000A;&#x000A;Jameson Building Hallway&#x000A;Doors line the walls of the short east-west hallway. Your classroom is to the south: Room 193.&#x000A;&#x000A;You can see your classmates here.&#x000A;&#x000A;That was weird. You feel that the blackout wasn't just a coincidence. Something's up with that book, and you'd better figure out what it is.&#x000A;&gt;</result>
+    <commentary xml:space="preserve">Confused shouts echo through the room, and the chairs bump and scrape as students grope toward the closed door. You grab Grumman's Guide to Spelling and jump to your feet.&#x000A;&#x000A;Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.&#x000A;&#x000A;Jameson Building Hallway&#x000A;Doors line the walls of the short east-west hallway. Your classroom is to the south: Room 193.&#x000A;&#x000A;You can see your classmates here.&#x000A;&#x000A;That was weird. You feel that the blackout wasn't just a coincidence. Something's up with that book, and you'd better figure out what it is.&#x000A;&gt;</commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">NO</temporary>
+    <children>
+      <child nodeId="node-23"/>
+    </children>
+  </item>
+  <item nodeId="node-23">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Jameson Building Hallway&#x000A;Doors line the walls of the short east-west hallway. Your classroom is to the south.&#x000A;&#x000A;You can see your classmates here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve">Jameson Building Hallway&#x000A;Doors line the walls of the short east-west hallway. Your classroom is to the south.&#x000A;&#x000A;You can see your classmates here.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
     <changed>YES</changed>
     <temporary score="0">NO</temporary>
