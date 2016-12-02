@@ -216,7 +216,7 @@ Instead of reading your spellbook for the second time:
 
 Instead of reading your spellbook for the third time:
 	say "You're growing bored with the spelling book, but you give it a cursory scan.";
-	say "Just before you completely lose interest, you notice an unusual pair of words: '[italic type]sypra lum[roman type].' You murmur the peculiar words under your breath.";
+	say "Just before you completely lose interest, you notice an unusual pair of words: '[italic type]sypra lum[roman type].' With your curiosity aroused, you involuntarily murmur the peculiar words under your breath.";
 	say "[bold type]A chill runs through you, and the room plunges into darkness.[roman type][paragraph break]";
 	now Room 193 is not lighted;
 	say "[more]";
@@ -228,11 +228,12 @@ Instead of reading your spellbook for the third time:
 		if the player does not enclose the item:
 			try silently taking the item;
 			[TODO: "silently try" isn't silent, but Inform seems to accept it. File bug report?]
+			[TODO: make sure we actually took the item?]
 			add the item to the taken items;
 	say "You [if the taken items is not empty]grab [the taken items] and[end if] jump to your feet.[paragraph break]";
 	say "Someone pushes through the door, and, guided by the dim illumination, you follow with the other students.";
 	move your classmates to the Jameson Building Hallway;
-	[We reveal the spellbook after printing its (old) title so the player must examine it to see the new title.]
+	[We reveal the spellbook after printing its (old) title (during the process of grabbing everything) so the player must examine it to see the new title.]
 	[TODO: move this to a later point?]
 	now your spellbook is not disguised;
 	now the title of your spellbook is "Grumman's Guide to Spells";
@@ -249,5 +250,10 @@ Investigating the Book begins when Late for Class ends.
 When Investigating the Book begins:
 	say "[italic type]That was weird. You feel that the blackout wasn't just a coincidence. Something's up with that book, and you'd better figure out what it is.[roman type]".
 
+Every turn when the player is in Room 193 during Investigating the Book:
+	say "[italic type]Before long, someone will be here to fix the lights. You'd probably better not be here when that happens.[roman type][paragraph break]";
+	say "You nervously back out of the room.";
+	try exiting.
+
 Instead of going to the Crowded Courtyard from the Jameson Building Hallway during Investigating the Book:
-	say "It's pretty crowded out there. Given what just happened in the classroom, ". [TODO: finish writing!]
+	say "[italic type]It's pretty crowded out there. Given what just happened in the classroom, it seems unwise to attract any more attention.[roman type]"
